@@ -1,0 +1,70 @@
+<div class="modal fade modal-xl" id="modal-up-email" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header" id="header-email">
+            <h1 class="modal-title fs-5" id="h1ModalEmails">Alteração de E-mails</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+    
+            <form class="row g-3 needs-validation" id="form-email-up" >
+              <div class="col-md-4">
+                <label for="email" class="label-control">Email</label>
+                <input type="text" id="email" class="form-control" placeholder="Email que corresponde ao nome do lado" required>
+                <div class="invalid-feedback">
+                  Campo vazio!
+                </div>
+              </div>
+    
+              <div class="col-md-6">
+                <label for="nome_email" class="label-control">Nome</label>
+                <input type="text" id="nome_email" class="form-control" placeholder="Digite o nome do responsável pelo email ao lado" required>  
+                <div class="invalid-feedback">
+                  Campo vazio!
+                </div>
+              </div>
+
+              <div class="col-md-1" id="add-email">
+                <button class="btn btn-primary" type="submit" id="add-emails">
+                  <i class='bx bx-message-square-add' ></i>
+                </button>
+              </div>
+    
+              <div class="col-md-10">
+                <ul class="list-group" id="lista-emails">
+                  <li class="list-group-item active" data-bs-toggle="list" aria-current="true">Lista de Emails</li>
+    
+                </ul>
+    
+              </div>
+    
+              <div class="col-md-1">
+                <button class="btn btn-warning" type="button" onclick="alterarEmails()">
+                  <i class='bx bxs-edit'></i>
+                </button>
+    
+                <button class="btn btn-primary mt-2" id="delete-emails" type="button" onclick="deleteEmail()">
+                  <i class='bx bxs-trash'></i>
+                </button>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+            <button type="button" class="btn btn-primary" onclick="listaEmail()"><i class='bx bxs-save'></i> Salvar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../javaScript/post/insert_email.js"></script>
+
+  <script>
+    
+    function duvidasMensagem(){
+      alert("No campo 'Nome do Email' informe o nome do responsável pelo e-mail, já no campo 'E-mail' informe o endereço de e-mail do responsável ao lado.")
+    }
+
+    let btnSubmit = document.getElementById('add-emails')
+    btnSubmit.addEventListener('click', validarEmail(0))
+  </script>
+

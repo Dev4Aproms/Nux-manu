@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+   
+    <link rel="stylesheet" type="text/css" href="../global/css/mastercss.css">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</head>
+
+    <body style="background-color: #EDEDED;">
+        
+        <div class="container p-3">
+          <header class="mb-auto">
+            <div>
+              <h3 class="float-md-start mb-0 p-3">APROMSNET</h3>
+              <nav class="nav nav-masthead justify-content-center float-md-end">
+                
+              </nav>
+            </div>
+          </header>
+            <div id="login" class="text-center">
+                <form class="row g-3">
+                    <h1>Faça o seu login.</h1>
+                    <div class="col-md-4">
+
+                    </div>
+                        <div class="col-md-4">
+                          <!-- <label for="usuario_login" class="col-form-label">Usuário:</label>
+                          <input type="text" class="form-control" id="usuario_login"> -->
+                          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal_login">
+                            Acessar o sistema
+                          </button>
+                        </div>
+                        <div class="col-md-4">
+
+                        </div>
+                        <div class="col-md-4">
+
+                        </div>
+                        <div class="col-md-4">
+                          <!-- <label for="senha_login" class="col-form-label">Senha:</label>
+                          <input class="form-control" type="password" id="senha_login"> -->
+                        </div>
+                        <div class="col-md-4">
+
+                        </div>
+                        <div class="col-md-4">
+
+                        </div>
+                        <div class="col-md-4">
+                        <!-- <button class="btn btn-outline-light btn-lg" id="btnEntrarLog" type="button" onclick="boraLogin()">Entrar</button> -->
+                        </div>
+                      
+                        
+                  
+                    </p>
+                </form>
+                
+
+            </div>
+     
+
+            <div class="modal fade " id="modal_login" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" >
+                <div class="modal-content" id="tamanhoModalLogin">
+                  <div class="modal-header modal-sm" id="modalHeader">
+                      <div class="position-absolute top-0 start-50 translate-middle">
+                           <div class="login-user-icon"><i class='bx bx-user'></i></div>
+                      </div>
+                      <div class="position-absolute top-0 start-50 translate-middle">
+                          <h2 class="ms-1" id="h1headerLogin">Login</h2>
+                     </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                      <form action="" class="row g-3">
+                          <div class="container">
+                              <div class="col-md-12" id="camposLogin">
+                                  <label for="cnpj_login" class="label-control">CNPJ/CPF</label>
+                                  <input type="text" class="form-control" id="cnpj_login">
+                              </div>
+                              <div class="col-md-12" id="camposLogin">
+                                  <label for="login_user" class="label-control">Usuário</label>
+                                  <input type="text" class="form-control" id="login_user">
+                              </div>
+                              <div class="col-md-12" id="camposLogin">
+                                  <label for="password_user" class="label-control">Senha</label>
+                                  <input type="password" class="form-control" id="password_user">
+                              </div>
+                          </div>
+                          <div class="d-grid gap-2 col-8 mx-auto">
+                              <button class="btn" type="button" id="btnLogin" onclick="boraLogin()">Entrar</button>
+                              <a href="" id="esqueciSenha">Esqueci a minha senha</a>
+                          </div>
+                      </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+      <script>
+          const myModal = document.getElementById('myModal')
+      const myInput = document.getElementById('myInput')
+      
+      myModal.addEventListener('shown.bs.modal', () => {
+        myInput.focus()
+      })
+      </script>
+        <!-- abrirModal('modal_login') -->
+        <!-- Button trigger modal -->
+
+
+          <footer class="mt-auto text-white-50">
+            <!-- <p>Cover template for <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>, by <a href="https://twitter.com/mdo" class="text-white">@mdo</a>.</p>
+            <p>Testes para o sistema, feitos por Manuzona no front e Marquinhos no Back.</p>
+            <p>Análise, testes, correções e orientação por Netão</p> -->
+          </footer>
+        </div>
+
+    
+  </div>
+
+  <script>
+
+    let entrar = document.getElementById('btnEntrarLog')
+
+    window.addEventListener('keypress',()=>{
+      if(event.keyCode === 13){
+        boraLogin()
+      }
+      
+    })
+
+    
+  </script>
+  <script src="../global/javaScript/modal.js"></script>
+  <script src="../global/javaScript/login/postLogin.js"></script>
+  <script src="../global/javaScript/url/achandoUrl.js"></script>
+        
+</body>
+</html>

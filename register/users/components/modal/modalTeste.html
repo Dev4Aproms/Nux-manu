@@ -1,0 +1,78 @@
+
+
+<!-- Modal -->
+<div class="modal fade modal-xl " id="teste-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header" id="header-teste">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Telefones</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+  
+          <form class="row g-3 needs-validation" id="form-teste-up">
+  
+            <div class="col-md-3">
+              <label for="telefone" class="label-control">Telefone</label>
+              <input type="text" id="telefone" maxlength="14" class="form-control" oninput="criaMascaraCell('telefone')" placeholder="Telefone que corresponde ao nome do lado" required>
+              <div class="invalid-feedback">
+                Campo vazio!
+              </div>
+            </div>
+  
+            <div class="col-md-5">
+              <label for="nome_telefone" class="label-control">Nome</label>
+              <input type="text" id="nome_telefone"  class="form-control" placeholder="Digite o nome do responsável pelo telefone ao lado" required>  
+              <div class="invalid-feedback">
+                Campo vazio!
+              </div>
+            </div>
+  
+            <div class="col-md-2">
+              <div class="form-check" id="checkTelefone">
+                <input class="form-check-input" type="checkbox" id="wpp">
+                <label class="form-check-label" for="wpp">
+                  Whatsapp?
+                </label>
+              </div>
+            </div>
+            
+            <div class="col-md-1" id="add-email">
+              <button class="btn btn-primary" type="submit" id="add-telefones">
+                <i class='bx bx-message-square-add' ></i>
+              </button>
+            </div>
+  
+            <div class="col-md-10" id="listaModalTelefone">
+              <ul class="list-group" id="lista-telefones">
+                <li class="list-group-item active" aria-current="true">Lista de Telefones</li>
+  
+              </ul>
+  
+            </div>
+  
+            <div class="col-md-1" id="divBotoes">
+              <button class="btn btn-warning" type="button" >
+                <i class='bx bxs-edit'></i>
+              </button>
+  
+              <button class="btn btn-danger mt-2" id="delete-telefones" type="button" >
+                <i class='bx bxs-trash'></i>
+              </button>
+            </div>
+  
+    
+          </form>
+  
+  
+        <div class="modal-footer mt-2">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+          <button type="button" class="btn btn-primary" ><i class='bx bxs-save'></i> Salvar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+
+  
+  

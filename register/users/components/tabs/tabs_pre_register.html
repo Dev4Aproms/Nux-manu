@@ -1,0 +1,493 @@
+<div class="container-fluid" id="todoTab">
+    <div class="tab">
+      <ul class="nav nav-tabs" id="ul-cadastro">
+        <li class="nav-item">
+          <a class="nav-link tablinks " id="tabPreCadastro" href="#" onclick="openTab(event, 'preCadastro')">Dados do Cliente</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link tablinks " id="tabConsulta" href="#" onclick="openTab(event, 'consulta')">Consulta</a>
+        </li>
+        <li class="nav-item">
+          
+        </li>
+      </ul>
+    </div>
+  
+  
+
+  
+<!-- --------------------------------------- Final do pré cadastro --------------------------------------- -->
+
+
+<!-- ---------------------- Incio para o Crédito ------------------------ -->
+  <div id="preCadastro" class="tabcontent">
+    <div class="d-flex flex-column flex-md-row align-items-center mb-3" id="titulo">
+        <i class='bx bx-user-plus'></i>
+        <h3 class="mt-3" id="h3">Pré-Cadastro</h3>
+    </div>
+    
+    <form class="row g-3 needs-validation" id="Pre_Cadastro" novalidate>
+
+      <div class="col-md-4" name="div-razaoSocial">
+        <label for="razao_social" name="razao_social" class="form-label">Razão Social</label>
+        <input id="razao_social" type="text" class="form-control" maxlength="100" name="razao_social" required>
+      </div>
+
+      <div class="col-md-4">
+        <label for="nome_fantasia" class="form-label">Nome Fantasia</label>
+        <input id="nome_fantasia" type="text" class="form-control" maxlength="100" required>
+        <div class="invalid-feedback">
+          Campo obrigatório!
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <label for="contact_client" class="form-label">Contato principal</label>
+        <input id="contact_client" type="text" class="form-control" maxlength="50" placeholder="Informe o principal contato" required>
+        <div class="invalid-feedback">
+          Campo obrigatório!
+        </div>
+      </div>
+<!-- --------------------------------------------------------------------------------------------------------- -->
+
+      <div class="col-md-4">
+          <label for="cnpj" class="form-label">CNPJ/CPF</label>
+          <input type="text" class="form-control" maxlength="15" id="cnpj" oninput="criarMascaraCNPJ('cnpj')" required>
+      </div>
+
+      <div class="col-md-1">
+        <label for="estado" class="form-label">Estado</label>
+        <select id="estado" class="form-select" onchange="preenchendoComboCidade('estado')" required>
+          <option selected></option>
+          <option>AC</option>
+          <option>AL</option>
+          <option>AP</option>
+          <option>AM</option>
+          <option>BA</option>
+          <option>CE</option>
+          <option>DF</option>
+          <option>ES</option>
+          <option>GO</option>
+          <option>MA</option>
+          <option>MS</option>
+          <option>MT</option>
+          <option>MG</option>
+          <option>PB</option>
+          <option>PR</option>
+          <option>PA</option>
+          <option>PE</option>
+          <option>PI</option>
+          <option>RJ</option>
+          <option>RN</option>
+          <option>RS</option>
+          <option>RO</option>
+          <option>RR</option>
+          <option>SC</option>
+          <option>SP</option>
+          <option>SE</option>
+          <option>TO</option>
+        </select>
+        <div class="invalid-feedback">
+          Campo obrigatório!
+        </div>
+      </div>
+
+      <div class="col-md-3">
+          <label for="city" class="form-label">Cidade</label>
+          <select id="city" class="form-select" required>
+            <option selected></option>
+
+          </select>
+          <div class="invalid-feedback">
+            Campo obrigatório!
+          </div>
+      </div>
+<!-- -------------------------------------------------------------------------------------------- -->
+      <div class="col-md-4">
+        <label for="regiao_atua" class="form-label">Região de Atuação</label>
+        <input id="regiao_atua" type="text" class="form-control" maxlength="50" required>
+        <div class="invalid-feedback">
+          Campo obrigatório!
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <label for="endereco_client" class="form-label">Endereço</label>
+        <input id="endereco_client" type="text" class="form-control" maxlength="100" placeholder="Ex: Rua Ponta Porã , 3402, Vila Rosa, complemento">
+      </div>
+
+      <div class="col-md-4">
+        <label for="date_visit" class="form-label">Data Visita</label>
+        <input id="date_visit" type="date" class="form-control" required>
+      </div>
+<!-- -------------------------------------------------------------------------------------------- -->
+
+
+      <div class="col-md-4">
+        <label for="bandeira" class="form-label">Bandeira</label>
+        <select id="bandeira" class="form-select" onfocus="preenchendoComboBandeira()">
+          <option selected> </option>
+
+          <!-- <option>Negociação</option> -->
+        </select>
+      </div>
+
+      <div class="col-md-3">
+        <label for="rede" class="form-label">Rede</label >
+        <select id="rede" class="form-select" onfocus="preenchendoComboRedes()">
+          <option selected> </option>
+          <!-- <option selected>oi</option>
+          <option selected>boi</option>
+          <option selected>moi</option>
+          <option selected>xoi</option>
+          <option selected>loi</option> -->
+
+          <!-- <option>Negociação</option> -->
+        </select>
+      </div>
+
+      <div class="col-md-1">
+        <label for="numero_postos" class="form-label">N° Postos</label>
+        <input id="numero_postos" type="number" class="form-control" maxlength="50">
+      </div>
+
+<!-- -------------------------------------------------------------------------------------------- -->
+
+      <!-- <div class="col-md-4">
+        <label for="situacao" class="form-label">Situação</label>
+        <select id="situacao" class="form-select">
+          <option selected></option>
+          <option>Ativo</option>
+          <option>Inativo</option>
+          <option>Bloqueado</option>
+          
+        </select>
+      </div> -->
+<!-- <option>Negociação</option> -->
+      <div class="col-md-4">
+        <label for="status" class="form-label">Status</label>
+        <select id="status" class="form-select" required>
+          <option selected></option>
+          <option>Pré-Cadastro/Negociando</option>
+          <option>Fechado/OK</option>
+        </select>
+        <div class="invalid-feedback">
+          Campo obrigatório!
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <label for="colaborador" class="form-label">Colaborador</label>
+        <input id="colaborador" type="text" class="form-control" maxlength="50" disabled required>
+        <div class="invalid-feedback">
+          Campo obrigatório!
+        </div>
+      </div>
+
+<!-- ------------------------------------------------------------------------------------------------- -->
+
+
+      <div class="col-md-4">
+        <label for="observacoes" class="form-label">Observações</label>
+        <div class="form-floating">
+          <textarea  id="observacoes" class="form-control" placeholder="Caso tenha observações, digite aqui"></textarea>
+        </div>
+      </div>
+
+
+      <div class="col-1" id="botoes">
+        <div id="botaoTelefoneModal">
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#telefone-modal" >
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-telephone-plus-fill" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511zM12.5 1a.5.5 0 0 1 .5.5V3h1.5a.5.5 0 0 1 0 1H13v1.5a.5.5 0 0 1-1 0V4h-1.5a.5.5 0 0 1 0-1H12V1.5a.5.5 0 0 1 .5-.5z"/>
+            </svg>
+          </button>
+        </div>
+        <!-- ABRE MODAL TELEFONE -->
+        
+        <!-- ABRE O MODAL DE EMAILS -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-up-email">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-envelope-at-fill" viewBox="0 0 16 16">
+            <path d="M2 2A2 2 0 0 0 .05 3.555L8 8.414l7.95-4.859A2 2 0 0 0 14 2H2Zm-2 9.8V4.698l5.803 3.546L0 11.801Zm6.761-2.97-6.57 4.026A2 2 0 0 0 2 14h6.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.606-3.446l-.367-.225L8 9.586l-1.239-.757ZM16 9.671V4.697l-5.803 3.546.338.208A4.482 4.482 0 0 1 12.5 8c1.414 0 2.675.652 3.5 1.671Z"/>
+            <path d="M15.834 12.244c0 1.168-.577 2.025-1.587 2.025-.503 0-1.002-.228-1.12-.648h-.043c-.118.416-.543.643-1.015.643-.77 0-1.259-.542-1.259-1.434v-.529c0-.844.481-1.4 1.26-1.4.585 0 .87.333.953.63h.03v-.568h.905v2.19c0 .272.18.42.411.42.315 0 .639-.415.639-1.39v-.118c0-1.277-.95-2.326-2.484-2.326h-.04c-1.582 0-2.64 1.067-2.64 2.724v.157c0 1.867 1.237 2.654 2.57 2.654h.045c.507 0 .935-.07 1.18-.18v.731c-.219.1-.643.175-1.237.175h-.044C10.438 16 9 14.82 9 12.646v-.214C9 10.36 10.421 9 12.485 9h.035c2.12 0 3.314 1.43 3.314 3.034v.21Zm-4.04.21v.227c0 .586.227.8.581.8.31 0 .564-.17.564-.743v-.367c0-.516-.275-.708-.572-.708-.346 0-.573.245-.573.791Z"/>
+          </svg>
+        </button>
+
+      </div>
+ 
+      <div class="col-md-3" id="lista_telefone_div">
+        <label for="lista-telefone">Lista de Telefone</label>
+        <div id="lista-telefone">
+
+        </div>
+      </div>
+
+      <div class="col-md-3" id="lista_email_div">
+        <label for="lista-email" id="label-liemail">Lista de Email</label>
+        <div id="listaEmail">
+
+        </div>
+      </div>
+
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button class="btn btn-outline-danger me-md-2" type="button" form="Pre_Cadastro" onclick="cancelar()" id="button_save" >Cancelar</button>
+        <button class="btn btn-primary me-md-2" type="submit" form="Pre_Cadastro" id="button_save" onclick="validate(0)">Salvar</button>
+
+      </div>
+     
+  </form>
+
+
+    <br>
+
+    </div>
+
+    <script>
+      function criarMascaraCNPJ(campo) {
+
+        let valorInput = document.getElementById(campo).value
+        let valorSemPonto = document.getElementById(campo).value.replace(/([^0-9])+/g, "");
+        document.getElementById(campo).value = valorSemPonto
+       
+
+        const maskcnpj = {
+          cnpj: valorInput.replace(/[^\d]/g, "").replace(/[^\d]/g, "").replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/, "$1.$2.$3/$4-$5")
+        }
+        
+        const maskcpf = {
+          cpf: valorInput.replace(/[^\d]/g, "").replace(/[^\d]/g, "").replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4")
+        }
+
+
+        if (valorSemPonto.length === 14) {
+          document.getElementById(campo).value = maskcnpj['cnpj']
+        }else
+          if (valorSemPonto.length === 11) {
+            document.getElementById(campo).value = maskcpf['cpf']
+        }else{
+            
+        }
+
+      }
+
+      </script>
+<!-- --------------------------------------- Final do cadastro --------------------------------------- -->  
+    
+<div id="consulta" class="tabcontent">
+      <div class="d-flex flex-column flex-md-row align-items-center mb-3" id="titulo">
+        <i class='bx bx-search-alt-2'></i>
+        <h3 class="mt-3" id="h3">Consulta de Clientes</h3>
+      </div>
+      
+
+
+      <form class="row g-3 needs-validation" id="consulta_cli" novalidate>
+  
+  <!-- --------------------------------------------------------------------------------------------------------- -->
+  
+        <div class="col-md-3">
+          <label for="codigo_consulta" class="form-label">Código</label>
+          <input type="text" class="form-control" maxlength="15" id="codigo_consulta">
+        </div>
+
+        <div class="col-md-3">
+          <label for="cnpj_consulta" class="form-label">CNPJ/CPF</label>
+          <input type="text" class="form-control" maxlength="15" id="cnpj_consulta" oninput="criarMascaraCNPJ('cnpj_consulta')">
+        </div>
+
+        <div class="col-md-3">
+          <label for="estadoConsulta" class="form-label" id="estado">Estado</label>
+          <select id="estadoConsulta" class="form-select" onchange="preenchendoComboCidade('estadoConsulta')" required>
+            <option selected></option>
+            <option>AC</option>
+            <option>AL</option>
+            <option>AP</option>
+            <option>AM</option>
+            <option>BA</option>
+            <option>CE</option>
+            <option>DF</option>
+            <option>ES</option>
+            <option>GO</option>
+            <option>MA</option>
+            <option>MS</option>
+            <option>MT</option>
+            <option>MG</option>
+            <option>PB</option>
+            <option>PR</option>
+            <option>PA</option>
+            <option>PE</option>
+            <option>PI</option>
+            <option>RJ</option>
+            <option>RN</option>
+            <option>RS</option>
+            <option>RO</option>
+            <option>RR</option>
+            <option>SC</option>
+            <option>SP</option>
+            <option>SE</option>
+            <option>TO</option>
+          </select>
+        </div>
+  
+        <div class="col-md-3">
+            <label for="cityConsulta" class="form-label">Cidade</label>
+            <select id="cityConsulta" class="form-select" required>
+              <option selected></option>
+  
+            </select>
+        </div>
+
+        <div class="col-md-3">
+            <label for="nome_fantasia_consulta" class="form-label">Nome Fantasia</label>
+            <input type="text" class="form-control" maxlength="100" id="nome_fantasia_consulta">
+        </div>
+
+        <div class="col-md-3">
+          <label for="razao_social_consulta" class="form-label">Razão Social</label>
+          <input type="text" class="form-control" maxlength="15" id="razao_social_consulta">
+        </div>
+
+        <div class="col-md-2">
+         
+        </div>
+
+        <div class="col-md-4 d-grid gap-2 d-md-flex justify-content-md-end" id="div_btn_consulta">
+          <button type="button" class="btn btn-primary" id="btn_consulta" onclick="parametrosConsulta('')" >Pesquisar</button>
+        </div>
+       
+    </form>
+    </div>
+  </div> <!-- Fim da primeira div -->
+
+<div id="proposta-comercial">
+  <div class="container-fluid" id="div-info-pdf">
+
+    <form class="row g-3 needs-validation" id="form-propostaComercial" novalidate> 
+      
+      <h4>Proposta Comercial</h4>
+          <div class="col-md-2">
+            <label for="data_elaboracao" class="form-label">Data de Criação</label>
+            <input type="date" class="form-control" id="data_elaboracao" disabled>
+          </div>
+
+            <div class="col-md-3">
+              <label for="forma_pagamento" class="form-label">Forma de Pagamento</label>
+              <select id="forma_pagamento" class="form-select" required>
+                <option selected></option>
+              </select>
+              <div class="invalid-feedback">
+                Campo obrigatório!
+              </div>
+              <div class="valid-feedback">
+                Bora!
+              </div>
+            </div>
+
+
+            <div class="col-md-3">
+              <label for="forma_envio" class="form-label">Forma de Envio</label>
+              <select id="forma_envio" class="form-select" required>
+                <option selected></option>
+              </select>
+              <div class="invalid-feedback">
+                Campo obrigatório!
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="tipo_proposta" class="form-label">Tipo da Proposta</label>
+              <select id="tipo_proposta" class="form-select" required>
+                <option selected></option>
+              </select>
+              <div class="invalid-feedback">
+                Campo obrigatório!
+              </div>
+            </div>
+
+            <div class="col-md-1">
+                <label for="taxa_movimentacao" class="form-label">Taxa 
+                                                                  mov</label>
+                <input type="text" class="form-control" id="taxa_movimentacao" required>
+                <div class="invalid-feedback">
+                  Campo obrigatório!
+                </div>
+            </div>
+
+    
+
+            <div class="col-md-7">
+              <label for="observacoes_proposta" class="form-label">Observações</label>
+              <div class="form-floating">
+                <textarea  id="observacoes_proposta" class="form-control" placeholder="Caso tenha observações, digite aqui"></textarea>
+              </div>
+
+            </div>
+
+            <div class=" d-grid gap-2 d-md-flex justify-content-md-end">
+              <button type="button" class="btn btn-primary" onclick="preparandoInformacoes()">Salvar</button>
+            </div>            
+    </form>
+  </div>
+</div>
+
+<!--  -----------------  UPANDO ARQUIVOS -------------------- -->
+
+
+<!-- -------------------------------------------------------- -->
+
+<div  id="table-consulta_proposta">
+  <div id="div_table_proposta" class="container-fluid">
+    <table class="table" id="table_consulta_pdf">
+      <thead>
+        <tr class="tit">
+          <th scope="col">Código</th>
+          <th scope="col">Data Elaboração</th>
+          <th scope="col">Colaborador</th>
+          <th scope="col">Taxa de Movimentação</th>
+          <th scope="col">Ações</th>
+        </tr>
+      </thead>
+      <tbody id="tbody_pdf">
+
+      </tbody>
+    </table>
+  </div>
+</div> 
+
+<script>
+  //Funca que abre a tela do TAB
+   function openTab(evt, tabName) {
+ 
+     if (tabName === 'consulta') {
+       document.getElementById('table-consulta').style.display = 'block'
+     }else{
+       document.getElementById('table-consulta').style.display = 'none'
+     }
+
+
+     
+     var i, tabcontent, tablinks;
+     tabcontent = document.getElementsByClassName('tabcontent');
+     
+     for (i = 0; i < tabcontent.length; i++) {
+       tabcontent[i].style.display = "none";
+     
+     }
+     tablinks = document.getElementsByClassName('tablinks');
+
+     for (i = 0; i < tablinks.length; i++) {
+       tablinks[i].className = tablinks[i].className.replace(" active", " ");
+     }
+     document.getElementById(tabName).style.display = 'block';
+     evt.currentTarget.className += 'active';
+     if(tabName === 'preCadastro' && document.getElementById('h3').innerText === 'Alterar Dados do Cliente'){
+       document.getElementById('proposta-comercial').style.display = 'block'
+       document.getElementById('table-consulta_proposta').style.display = 'block'
+     }else{
+          document.getElementById('proposta-comercial').style.display = 'none'
+          document.getElementById('table-consulta_proposta').style.display = 'none'
+     }
+   }
+
+   document.getElementById('colaborador').value = atob(sessionStorage.getItem('nomeUsuario'))
+ </script>

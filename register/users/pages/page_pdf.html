@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../global/css/mastercss.css">
+    <title>Document</title>
+
+    <script>
+        var params = window.location.search.substring(1).split('&')
+            var paramArray = {}
+            for (let i = 0; i < params.length; i++) {
+                var param = params[i].split('=')
+                paramArray[param[0]] = param[1]
+                
+            }
+            
+            let id = paramArray['id']
+           
+            id_proposta = {
+                'id_proposta' : parseInt(id)
+            }
+
+        window.addEventListener('load', ()=>{
+            
+            console.log('http://200.174.50.80/ProjetoTeste/clientRegisterInit/geraConsultaPdf')
+            fetch('http://200.174.50.80/ProjetoTeste/clientRegisterInit/geraConsultaPdf',{
+                method : 'POST',
+                body: JSON.stringify(id_proposta),
+                headers : {
+                    'Authorization': 'Bearer '+sessionStorage.getItem('token')
+                }
+            })
+            .then(function(response) {
+                return response.blob()})
+            .then(function(myBlob) {
+
+                console.log(myBlob)
+                var objectURL = URL.createObjectURL(myBlob);
+                document.querySelector('#pdf-frame').src = '';
+                document.querySelector('#pdf-frame').src = objectURL;
+                objectURL = URL.revokeObjectURL(myBlob)
+                
+            })  
+            .then(
+                function() {
+                window.setTimeout(function() {
+                document.querySelector('#pdf-frame').contentWindow.print();
+                }, 1000)
+            });
+        })
+    </script>
+</head>
+<body>
+    <iframe id="pdf-frame"></iframe>
+<!-- 
+    <div id="imports">
+        <script> $(function () {$("#imports").load("imports.html")}) </script>
+      </div> -->
+</body>
+</html>

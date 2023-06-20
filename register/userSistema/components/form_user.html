@@ -1,0 +1,57 @@
+<div id="proposta-comercial" >
+    <div class="container-fluid mt-3" id="div-info-pdf">
+  
+      <form class="row g-3 needs-validation" id="form-propostaComercial" novalidate> 
+        
+        <h4>Cadastro de Usuário do Sistema</h4>
+        <div class="col-md-4">
+            <label for="nome_completo" class="form-label">Nome</label>
+            <input type="text" class="form-control" id="nome_completo">
+          </div>    
+        
+        <div class="col-md-4">
+              <label for="usuario" class="form-label">Login</label>
+              <input type="text" class="form-control" id="usuario">
+            </div>
+  
+            <div class="col-md-4">
+                <label for="senha" class="form-label">Senha</label>
+                <input type="password" class="form-control" id="senha">
+            </div>
+
+            <div class="col-md-4">
+                <label for="setor" class="form-label">Setor</label>
+                <select id="setor" class="form-select" required>
+                  <option selected></option>
+                  <option>Comercial</option>
+                  <option>Desenvolvimento</option>
+                </select>
+              </div>
+
+              <div class="col-md-4">
+                <label for="cnpj" class="form-label">CNPJ/CPF</label>
+                <input type="text" class="form-control" maxlength="15" id="cnpj" oninput="criarMascaraCNPJUser('cnpj')">
+            </div>
+
+            <div class="col-md-4">
+                <label for="razaoSocialUser" class="form-label">Razão Social</label>
+                <input type="text" class="form-control" id="razaoSocialUser">
+            </div>
+
+            <div class="col-md-4">
+                <label for="telefone_usuario" class="form-label">Telefone</label>
+                <input type="text" class="form-control" id="telefone_usuario" maxlength="14" oninput="criaMascaraCellUser('telefone_usuario')">
+            </div>
+
+            <div class="col-md-4">
+                <label for="email_usuario" class="form-label">Email</label>
+                <input type="text" class="form-control" id="email_usuario">
+            </div>
+  
+              <div class=" d-grid gap-2 d-md-flex justify-content-md-end">
+                <button type="button" class="btn btn-primary" onclick="parametrosUserSistema()">Salvar</button>
+              </div>            
+      </form>
+    </div>
+  </div>
+  

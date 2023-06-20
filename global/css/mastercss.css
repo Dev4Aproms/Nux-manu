@@ -1,0 +1,436 @@
+body{
+    background-color: #EDEDED;
+}
+
+#login{
+    padding-top: 20%;
+}
+
+#senha_login, #usuario_login{
+    background-color: white;
+    border-bottom: 1px solid white;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-radius: 8px;
+}
+
+
+/* HEADER */
+
+.logo_navbar{
+    padding: 0px;
+} 
+
+header{
+    position: absolute;
+    top: 0;
+    left: 0; 
+    padding: 0;
+}
+
+#tituloAproms, #spanAbreMenu, #opcaosub{
+    color: white;
+}
+
+#corFundo{
+    height: 70px;
+    background-color: #ffffff;    
+    
+}
+
+
+/* MENU LATERAL - SIDE_MENU*/
+
+#alinhar{ 
+    text-align: left;
+    width: 100%;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    padding: 10px;
+}
+
+#item-accordion:active{
+    border:#194f90;
+}
+
+#flush-headingTwo{
+    background-color: #194f90 ;
+}
+
+#basic-addon1, .accordion-body{
+    color: #025f84;
+    margin: 0px solid  #025f84 ;
+    border: 0px solid  #025f84 ;
+    background-color: #194f90 ;
+}
+
+#basic-addon1:hover, #menuopcao:hover{
+    background-color: skyblue;
+    color: rgb(255, 255, 255);
+   
+}
+#menuopcao, #caixinhadosubmenu{
+    background-color: #194f90;
+    color:#ffffff;
+}
+
+.menuOculto{
+    height: calc(100vh - 94px);
+    width: 0px;
+    flex-grow: 1;
+    flex-basis: auto;
+    top: 94px;
+    position: absolute;
+    z-index: 1;
+    top:95px;
+    left: 0;
+    background-color: #194f90;
+    overflow-x: hidden;
+    transition: 0.5s ;
+    padding-top: 0px;  
+    margin: 0px;
+    border: 0px;
+    overflow: auto;
+}
+
+#accordionFlushExample{
+    background-color: #194f90;
+    color: #ffffff;
+}
+
+#opmenu:hover, #bg-menu{
+    color: white ;
+    background-color:  #194f90;
+    
+    margin: 0px;
+}
+#sem-risco{
+    background-color:  #194f90;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+#opcaoMenu{
+    
+    top: 50px;    
+}
+
+#opcaosub{
+    padding-left: 10px;
+    padding-bottom: 15px;
+}
+
+#opcaosub-ul{
+    padding-left: 0px;
+}
+
+.menuOculto a{
+    transition: 0.3s
+}
+
+
+#opcaosub:hover{
+    border-radius: 5px;
+}
+
+#accordion-sideMenu{
+    background-color: #194f90;
+}
+
+.btnFechar{
+    position: absolute;
+    color: #ffffff;
+    top: 0;
+    right: 19px;
+    font-size: 36px;
+    margin-left: 50px;
+    text-decoration: none;
+}
+
+#main{
+    transition: margin-left 0.5s;
+
+}
+
+@media screen  and(max-height: 450px){
+    .menuOculto{padding-top: 15px;}
+    #opcaosub, #alinhas, .menuOculto a{font-size: 18px;}
+}
+
+#ico{
+    padding-right: 5px;
+}
+
+#cabecalho{
+    padding: 15px 25px 0 25px; 
+}
+
+#btnClose{
+padding-right: 10px;
+padding-top: 550px;
+  
+}
+
+#side_menu{
+    padding-top: 0px;
+    margin: 0px;
+    border: 0px;
+    overflow: hidden;
+}
+
+
+#buttonAbreMenu{
+    margin: 0;
+}
+
+ul {
+    list-style: none
+  }
+
+/* FOOTER */
+
+#footer_fixed{
+    padding: 35px 35px 15px  35px;
+    position: absolute;
+    bottom: 0;
+    left:0;
+}
+
+#apromsFooter{
+    font-size: 18px;
+    text-decoration: none;
+    color: #b8b8b8;
+    padding-left: 5px;
+    
+}
+
+#footer_a{
+    color: #b8b8b8;
+}
+  
+
+/* BREADCRUMB */
+
+#breadcrumb_a{
+    text-decoration: none;
+    color: rgb(100, 100, 100);
+}
+
+#textos_header{
+    color: #ffffff;
+}
+
+
+/* TABBS DE CREATE CLIENT */
+body {font-family: Arial;}
+.tab {
+overflow: hidden;
+background-color: #f1f1f1;
+}
+
+#todoTab, #div_table, #div-info-pdf, #div_table_proposta {
+width: 95%;
+padding-bottom: 20px;
+border-radius: 10px;
+background-color: white;
+}
+
+
+.tab a {
+/* background-color: inherit; */
+float: left;
+border: none;
+outline: none;
+cursor: pointer;
+padding: 14px 16px;
+transition: 0.3s;
+text-decoration: none;
+border-radius: 0px;
+}
+
+.tab ul, #div_form_user{
+
+background-color: white;
+}
+
+
+.tab a:hover {
+background-color: #ddd;
+border-radius: 0px;
+}
+
+
+.tab a.active {
+background-color: #ea9898;
+border-radius: 0px;
+}
+
+
+.tabcontent {
+display: none;
+padding: 6px 12px;
+
+border-top: none;
+}
+
+
+
+/* MODAL EMAIL */
+/* #modal_emails{
+    width: 300px;
+    height: 300px;
+} */
+
+#botaoTelefoneModal{
+    padding-bottom: 15px;
+    padding-top: 5px;
+    padding-right: 0px;
+    margin-right: 0px;
+}
+
+.popup{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 500px;
+    height: 180px;
+
+}
+
+#PopUpSimNao{
+    width: 500px;   
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: flex;
+    border-radius: 0px;
+}
+#headerpopup{
+    background-color: #87CEEB;
+    border-radius: 0px;
+    border: #87CEEB;
+}
+
+#circulo{
+    
+    background-color: #78BEDB;
+    width: 90px;
+    height: 90px;
+    border-radius: 60px;
+    
+}
+
+#bodypopup{
+    text-align: center;
+    color:#7e7d7d;
+}
+
+#icoPopUp{
+    padding-top: 15px;
+}
+
+
+#pdf-frame{
+  display: flex;
+  align-items: stretch;
+  position: absolute;
+  width: 100%;
+  height: 100%
+}
+
+#nameError {
+    display: none;
+    font-size: 0.8em;
+  }
+  
+  #nameError.visible {
+    display: block;
+  }
+  
+  input.invalid {
+    border-color: red;
+  }
+
+  .login-user-icon {
+    /* display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -55px;
+    */
+    background-color: #fa7d28;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    /* text-align: center; */
+}
+
+#btnLogin{
+    background-color: #ffffff;
+    border: 1px solid #fa7d28;
+    color: #fa7d28;
+    border-radius: 15px;
+}
+
+#btnLogin:hover{
+    color: #ffffff;
+    background-color: #fa7d28;
+}
+
+#esqueciSenha{
+    text-decoration: none;
+    color: #7e7d7d;
+    text-align: center;
+    align-items: center;
+    
+}
+
+#esqueciSenha:hover{
+    color: #fa7d28;
+
+}
+
+.login-user-icon i{
+font-size: 70px;
+color: white;
+margin-left: 13px;
+margin-top: 15px;
+}
+
+#modalHeader{
+    height: 100px;
+    border-bottom: 0px;
+}
+
+#tamanhoModalLogin{
+    width: 85%;
+}
+
+#camposLogin{
+    padding: 10px 25px 10px 25px;
+}
+
+#h1headerLogin{
+    padding-top: 150px;
+}
+
+.login h2{
+    margin-right: 5px;
+}
+
+#tabCadastro.active{
+    border-radius: 8px 8px 0px 0px;
+    background-color: rgba(226, 226, 226, 0.459);
+}
+
+#tabConsulta.active{
+    border-radius: 8px 8px 0px 0px;
+    background-color: rgba(226, 226, 226, 0.459);
+}

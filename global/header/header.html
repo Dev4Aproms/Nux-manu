@@ -1,0 +1,65 @@
+<header class="navbar p-2" id="corFundo" >
+    <div class="container-fluid">
+
+        <div class="textos" id="textos_header">
+            
+            <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto" onload="cnpjRazaoSocial()">
+                
+                <p class="me-3 py-2 text-dark text-decoration-none" id="cnpj_header" onclick="criarMascaraCNPJP('cnpj_header')"></p>
+                <p class="me-3 py-2 text-dark text-decoration-none" id="razosocial_header"></p>
+            </nav>
+        </div>
+
+        
+
+        <div class="d-flex flex-column flex-md-row align-items-center mb-3">
+            <a href="../../public/principal.html" class="d-flex align-items-center text-dark text-decoration-none mt-3">
+                <svg  xmlns="http://www.w3.org/2000/svg"  width="25" height="25" fill="currentColor" class="bi bi-person-circle mb-3" viewBox="0 0 16 16" onclick="abrir()">
+                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                  </svg>
+                 <span class="fs-5 ms-1"><p id="log_usuario"></p></span> 
+            </a>
+    </div>
+</header> 
+
+<script>
+        const log_usuario = document.querySelector('#log_usuario')
+        log_usuario.textContent = 'Usuário: '+atob(sessionStorage.getItem('user'))
+
+        const prsocial = document.querySelector('#razosocial_header')
+        prsocial.textContent = atob(sessionStorage.getItem('razaoSocial'))
+
+        const pcnpj = document.querySelector('#cnpj_header')
+        pcnpj.textContent = cpf(atob(sessionStorage.getItem('cnpj'))) 
+
+        if(atob(sessionStorage.getItem('cnpj')).length === 14){
+            pcnpj.textContent = cnpj(atob(sessionStorage.getItem('cnpj')))    
+        }else  
+            if(atob(sessionStorage.getItem('cnpj')).length === 11){
+                pcnpj.textContent = cpf(atob(sessionStorage.getItem('cnpj')))
+            }else{
+                alert('erro, cnpj ou cpf do cliente está errado, entrar em contato com o suporte!')
+            }
+
+        function cnpj(v) {
+            v=v.replace(/\D/g,"")                           //Remove tudo o que não é dígito
+            v=v.replace(/^(\d{2})(\d)/,"$1.$2")             //Coloca ponto entre o segundo e o terceiro dígitos
+            v=v.replace(/^(\d{2})\.(\d{3})(\d)/,"$1.$2.$3") //Coloca ponto entre o quinto e o sexto dígitos
+            v=v.replace(/\.(\d{3})(\d)/,".$1/$2")           //Coloca uma barra entre o oitavo e o nono dígitos
+            v=v.replace(/(\d{4})(\d)/,"$1-$2")              //Coloca um hífen depois do bloco de quatro dígitos
+            return v
+        }
+
+        function cpf(v){
+            v=v.replace(/\D/g,"")                    //Remove tudo o que não é dígito
+            v=v.replace(/(\d{3})(\d)/,"$1.$2")       //Coloca um ponto entre o terceiro e o quarto dígitos
+            v=v.replace(/(\d{3})(\d)/,"$1.$2")       //Coloca um ponto entre o terceiro e o quarto dígitos
+                                                    //de novo (para o segundo bloco de números)
+            v=v.replace(/(\d{3})(\d{1,2})$/,"$1-$2") //Coloca um hífen entre o terceiro e o quarto dígitos
+            return v
+        }
+</script>
+
+
+ 

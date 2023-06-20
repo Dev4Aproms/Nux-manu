@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+:root{
+    --body-color:#E4E9F7;
+    --sidebar-color:#FFF;
+    --primary-color: rgb(13, 110, 253);
+    --secondary-color: rgb(245, 134, 52);
+    --primary-color-light:#F6F5FF;
+    --toggle-color:#DDD;
+    --text-color: #707070;
+
+    --tran-02: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.4s ease;
+    --tran-05: all 0.5s ease;
+}
+#primeiro{
+    border-left: 0px;
+    }
+    
+    /* filtros pesquisa */
+    
+    #duvidas, #div_duvidas, #flush-headingOne, #flush-collapseOne{
+        border-top: 0px;
+        border-left: 0px;
+        border-right: 0px;
+        border-bottom: 0px;
+        margin: 0px;
+    }
+    
+    /* INPUT CREATE CLIENT */
+    
+    #Pre_Cadastro input , #Pre_Cadastro select, #modal_email input, #modal_telefone input, #dataFiltro, 
+    #consulta_cli input, #consulta_cli select, #form-propostaComercial input, #form-propostaComercial select,#form-propostaComercial textarea, #div_form_user input, 
+    #form-cadastro input, #form-cadastro select{
+        border-top: 0px;
+        border-left: 0px;
+        border-right: 0px;
+        border-radius: 0px;
+    }
+
+    #observacoes, #observacoes_proposta, #textareaEmail, #textareaTelefone{
+        resize: none;
+        height: 100px;
+    }
+
+    #listaEmail, #lista-telefone{
+        padding-top: 10px;
+    }
+    
+    .areaDeTrabalho{
+        background: red;
+        width: 100%;
+        height: 50px;
+    }
+
+    #container_breadcrumb{
+        padding-top: 15px;
+        padding-left: 25px;
+    }
+
+    #div_form_user{
+        padding-bottom: 15px;
+    }
+
+    #buttonUp{
+        background-color: transparent ;
+        color: #FFF;
+        border-radius: 5px;
+        width: 40px;
+        height: 40px;
+        font-size: 13px;
+        border: 0px;
+        font-family: 'Poppins', sans-serif;
+        vertical-align: middle;
+        border: 1px dotted black;
+        margin-left: 2px;
+    }
+
+    #buttonUp i{
+        color: black;
+        font-size: 18px;
+    }
+
+    #buttonUp:hover{
+        background-color: #7fda89;
+        border: 0;
+        color: white;  
+
+    }
+    #buttonUp:hover i{
+        background-color: #7fda89;
+        border: 0;
+        color: white;  
+    }
+
+    #buttonUpDoc{
+        background-color: transparent;
+        color: #FFF;
+        border-radius: 5px;
+        width: 40px;
+        height: 40px;
+        font-size: 13px;
+        border: 0px;
+        font-family: 'Poppins', sans-serif;
+        border: 1px dotted black;
+        vertical-align: middle;
+        margin-right: 2px;
+    }
+    
+    #iconUpDoc{
+        color: black;
+        font-size: 20px;
+        
+    }
+
+    #buttonUpDoc:hover{
+        background-color: #d9abff;
+        border: 0;
+        color: white;  
+
+    }
+    #buttonUpDoc:hover #iconUpDoc{
+        background-color: #d9abff;
+        border: 0;
+        color: white;  
+    }
+
+    
+#buttonPdf{
+    background-color: var(--primary-color) ;
+    color: #FFF;
+    border-radius: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 13px;
+    border: 0px;
+    font-family: 'Poppins', sans-serif;
+    border: 1px dotted var(--primary-color);
+    vertical-align: middle;
+    margin-right: 2px;
+}
+
+#buttonPdf:hover{
+    background-color: rgb(50, 132, 255) ;
+}

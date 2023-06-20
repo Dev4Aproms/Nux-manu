@@ -1,0 +1,80 @@
+<header class="navbar p-2" id="corFundo">
+    <div class="container-fluid">
+
+        <div class="textos" id="textos_header">
+
+            <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto" onload="cnpjRazaoSocial()">
+
+                <p class="me-3 py-2 text-dark text-decoration-none" id="empresa_cnpj"></p>
+
+            </nav>
+        </div>
+
+
+        <div class="d-flex flex-column flex-md-row align-items-center header-icon">
+            <a href="../../public/principal.html" class="d-flex align-items-center text-dark text-decoration-none mt-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-building-fill-up mb-3" viewBox="0 0 16 16">
+                    <path
+                        d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.354-5.854 1.5 1.5a.5.5 0 0 1-.708.708L13 11.707V14.5a.5.5 0 0 1-1 0v-2.793l-.646.647a.5.5 0 0 1-.708-.708l1.5-1.5a.5.5 0 0 1 .708 0Z" />
+                    <path
+                        d="M2 1a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7.256A4.493 4.493 0 0 0 12.5 8a4.493 4.493 0 0 0-3.59 1.787A.498.498 0 0 0 9 9.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .39-.187A4.476 4.476 0 0 0 8.027 12H6.5a.5.5 0 0 0-.5.5V16H3a1 1 0 0 1-1-1V1Zm2 1.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5Zm3 0v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5Zm3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1ZM4 5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5ZM7.5 5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Zm2.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5ZM4.5 8a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Z" />
+                </svg>
+                <span class="fs-5 ms-1">
+                    <p id="nome_empresa"></p>
+                </span>
+            </a>
+        </div>
+</header>
+
+
+<script>
+    function verificandoDocumento(params) {
+        if (params.length === 14) {
+            return cnpj(params)
+        } else
+            if (params.length === 11) {
+                return cpf(params)
+            } else {
+                return params
+            }
+    }
+
+    // ------------------ MASCARA CNPJ ------------------//
+    function cnpj(v) {
+
+        v = v.replace(/\D/g, "")                           //Remove tudo o que não é dígito
+        v = v.replace(/^(\d{2})(\d)/, "$1.$2")             //Coloca ponto entre o segundo e o terceiro dígitos
+        v = v.replace(/^(\d{2})\.(\d{3})(\d)/, "$1.$2.$3") //Coloca ponto entre o quinto e o sexto dígitos
+        v = v.replace(/\.(\d{3})(\d)/, ".$1/$2")           //Coloca uma barra entre o oitavo e o nono dígitos
+        v = v.replace(/(\d{4})(\d)/, "$1-$2")              //Coloca um hífen depois do bloco de quatro dígitos
+
+        return v
+    }
+
+    //------------------- MASCARA CPF -------------------//
+    function cpf(v) {
+
+        v = v.replace(/\D/g, "")                    //Remove tudo o que não é dígito
+        v = v.replace(/(\d{3})(\d)/, "$1.$2")       //Coloca um ponto entre o terceiro e o quarto dígitos
+        v = v.replace(/(\d{3})(\d)/, "$1.$2")       //Coloca um ponto entre o terceiro e o quarto dígitos
+        //de novo (para o segundo bloco de números)
+        v = v.replace(/(\d{3})(\d{1,2})$/, "$1-$2") //Coloca um hífen entre o terceiro e o quarto dígitos
+        return v
+    }
+
+</script>
+
+<script>
+    let infosEmpresa = []
+    infosEmpresa = sessionStorage.getItem('infosEmpresa').split(',')
+
+    let nomeEmpresa = infosEmpresa[0]
+    console.log(atob(infosEmpresa[1]))
+    const nome_empresa = document.getElementById('nome_empresa')
+    nome_empresa.textContent = atob(infosEmpresa[0])
+    const empresa_cnpj = document.querySelector('#empresa_cnpj')
+    let cnpjEmpresa = verificandoDocumento(atob(infosEmpresa[1]))
+    empresa_cnpj.textContent = cnpjEmpresa
+
+</script>

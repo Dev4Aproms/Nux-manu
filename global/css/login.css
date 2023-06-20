@@ -1,0 +1,68 @@
+.login-user-icon {
+    /* display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -55px;
+    */
+    background-color: #fa7d28;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    /* text-align: center; */
+}
+
+#btnLogin{
+    background-color: #ffffff;
+    border: 1px solid #fa7d28;
+    color: #fa7d28;
+    border-radius: 15px;
+}
+
+#btnLogin:hover{
+    color: #ffffff;
+    background-color: #fa7d28;
+}
+
+#esqueciSenha{
+    text-decoration: none;
+    color: #7e7d7d;
+    text-align: center;
+    align-items: center;
+    
+}
+
+#esqueciSenha:hover{
+    color: #fa7d28;
+
+}
+
+.login-user-icon i{
+font-size: 70px;
+color: white;
+margin-left: 13px;
+margin-top: 15px;
+}
+
+#modalHeader{
+    height: 100px;
+    border-bottom: 0px;
+}
+
+#tamanhoModalLogin{
+    width: 85%;
+}
+
+#camposLogin{
+    padding: 10px 25px 10px 25px;
+}
+
+#h1headerLogin{
+    padding-top: 150px;
+}
+
+.login h2{
+    margin-right: 5px;
+    color: black;
+}
+

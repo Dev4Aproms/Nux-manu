@@ -1,0 +1,137 @@
+<form class="row g-3 needs-validation" id="form-cadastro" novalidate>
+    <div class="col-md-5">
+        <label for="inputNome" class="form-label ">Nome</label>
+        <input type="text" class="form-control" id="inputNome" required maxlength="100">
+        <div class="invalid-feedback">
+            Campo inválido!
+        </div>
+    </div>
+    <div class="col-md-3">
+        <label for="inputCpf" class="form-label">CPF</label>
+        <input type="text" class="form-control" id="inputCpf" required oninput="inputCpfChange('inputCpf')"
+            maxlength="14">
+        <div class="invalid-feedback">
+            Campo inválido!
+        </div>
+    </div>
+    <div class="col-md-4">
+        <label for="inputEmail" class="form-label">Email</label>
+        <input type="email" class="form-control" id="inputEmail" maxlength="100">
+        <div class="invalid-feedback">
+            Campo inválido!
+        </div>
+    </div>
+    <div class="col-md-2">
+        <label for="inputCep" class="form-label">CEP</label>
+        <input type="text" class="form-control" id="inputCep" oninput="inputCepChange('inputCep')" maxlength="9">
+        <div class="invalid-feedback">
+            Campo inválido!
+        </div>
+    </div>
+    <div class="col-md-10">
+        <label for="inputEndereco" class="form-label">Endereço</label>
+        <input type="text" class="form-control" id="inputEndereco" maxlength="200"
+            placeholder="EX: Rua Doutor Nelson de Araújo, 340, Centro">
+    </div>
+    <div class="col-md-2">
+        <label for="inputCidade" class="form-label">UF</label>
+        <select id="inputUf" class="form-select" onchange="getCidadesPorEstado(value, 'Cadastro')">
+            <option selected=></option>
+            <option>AC</option>
+            <option>AL</option>
+            <option>AP</option>
+            <option>AM</option>
+            <option>BA</option>
+            <option>CE</option>
+            <option>DF</option>
+            <option>ES</option>
+            <option>GO</option>
+            <option>MA</option>
+            <option>MS</option>
+            <option>MT</option>
+            <option>MG</option>
+            <option>PB</option>
+            <option>PR</option>
+            <option>PA</option>
+            <option>PE</option>
+            <option>PI</option>
+            <option>RJ</option>
+            <option>RN</option>
+            <option>RS</option>
+            <option>RO</option>
+            <option>RR</option>
+            <option>SC</option>
+            <option>SP</option>
+            <option>SE</option>
+            <option>TO</option>
+        </select>
+    </div>
+    <div class="col-md-5">
+        <label for="inputCidade" class="form-label">Cidade</label>
+        <select id="inputCidade" class="form-select"></select>
+    </div>
+    <div class="col-md-3">
+        <label for="inputRg" class="form-label">RG</label>
+        <input type="text" class="form-control" id="inputRg" maxlength="8" pattern="[0-9]*"
+            oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+    </div>
+    <div class="col-md-2">
+        <label for="inputOrgao" class="form-label">Orgão Expedidor</label>
+        <input type="text" class="form-control" id="inputOrgaoRg" maxlength="10">
+    </div>
+    <div class="col-md-2">
+        <label for="inputCartao" class="form-label">Cartão</label>
+        <input type="text" class="form-control" id="inputCartao" maxlength="10" pattern="[0-9]*"
+            oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+    </div>
+    <div class="col-md-3">
+        <label for="inputTelefone" class="form-label">Telefone</label>
+        <input type="text" class="form-control" id="inputTelefone" required
+            oninput="inputTelefoneChange('inputTelefone')">
+        <div class="invalid-feedback">
+            Campo inválido!
+        </div>
+    </div>
+    <div class="col-md-2">
+        <label for="inputCnh" class="form-label numero">CNH</label>
+        <input type="text" class="form-control" id="inputCnhNum" maxlength="10" pattern="[0-9]*"
+            oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+    </div>
+    <div class="col-md-2">
+        <label for="inputMae" class="form-label">Categoria CNH</label>
+        <input type="text" class="form-control" id="inputCnhCat" maxlength="10" placeholder="EX: A, B, C">
+    </div>
+    <div class="col-md-3">
+        <label for="inputValidade" class="form-label">Validade</label>
+        <input type="date" class="form-control" id="inputValidade">
+    </div>
+    <div class="col-md-8">
+        <label for="inputMae" class="form-label">Nome da Mãe</label>
+        <input type="text" class="form-control" id="inputNomeMae" maxlength="100">
+    </div>
+    <div class="form-group col-md-4">
+        <label for="inputStatus" class="form-label">Status Motorista</label>
+        <select id="inputStatus" class="form-select">
+            <option selected></option>
+            <option>Ativo</option>
+            <option>Inativo</option>
+        </select>
+    </div>
+    <div class="col-md-8">
+        <label for="inputMotivo" class="form-label">Motivo</label>
+        <input type="text" class="form-control" id="inputMotivo" maxlength="100">
+    </div>
+    <div class="col-md-4">
+        <label for="inputValidadeExame" class="form-label">Validade do Exame Toxicológico</label>
+        <input type="date" class="form-control" id="inputValidadeTox">
+    </div>
+
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end" id="final-buttons">
+
+        <button class="btn btn-outline-danger me-md-2" type="button" form="inputSection" id="button_cancel" onclick="window.location.href = '../../public/principal.html';">Cancelar</button>
+
+        <button class="btn btn-outline-warning me-md-2" type="button" form="inputSection" id="button_new" onclick="novoBotao()">Novo</button>
+
+        <button class=" btn me-md-2 btn-primary" type="submit" form="form-cadastro" id="button_save" onclick="validate(0)">Salvar</button>
+    </div>
+</form>
