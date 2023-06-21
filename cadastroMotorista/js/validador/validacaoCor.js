@@ -17,7 +17,7 @@ function validarCPF(cpf) {
     let sum = 0;
     let remainder;
     for (let i = 0; i <= 8; i++) {
-        sum += parseInt(cpf.charAt(i)) * (10 - i);
+        sum += parseInt(cpf.charAt(i)) * (10 - i)
     }
     remainder = (sum * 10) % 11;
     if (remainder === 10 || remainder === 11) {
@@ -28,7 +28,7 @@ function validarCPF(cpf) {
     }
     sum = 0;
     for (let i = 0; i <= 9; i++) {
-        sum += parseInt(cpf.charAt(i)) * (11 - i);
+        sum += parseInt(cpf.charAt(i)) * (11 - i)
     }
     remainder = (sum * 10) % 11;
     if (remainder === 10 || remainder === 11) {
@@ -59,7 +59,7 @@ function inputTelefoneChange(input) {
 }
 
 function validarCelular(numero) {
-    const numeroLimpo = numero.replace(/[^\d]/g, '');
+    const numeroLimpo = numero.replace(/[^\d]/g, '')
 
     const padrao = /^\d{2}9\d{8}$/;
     return padrao.test(numeroLimpo);
@@ -77,7 +77,7 @@ function mascaraCelular(value) {
     }
 
     if (value.length > 0) {
-        formattedValue = value.replace(/(\d{2})(\d{1,5})(\d{1,4})/, '($1) $2-$3');
+        formattedValue = value.replace(/(\d{2})(\d{1,5})(\d{1,4})/, '($1) $2-$3')
     }
 
     return formattedValue;
@@ -128,7 +128,7 @@ function validaBonito(input) {
     let campo = document.getElementById(input)
     let value = campo.value
 
-    value = removerMascara(value);
+    value = removerMascara(value)
 
     if (input === 'inputCep') {
         if (value === '') {

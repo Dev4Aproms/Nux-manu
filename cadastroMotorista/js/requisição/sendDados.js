@@ -105,21 +105,25 @@ function enviarDados(url) {
             console.log(data)
             if (document.getElementById('h3').textContent === 'Cadastro Motorista') {
                 if (data.error === 'CPF ja cadastrado') {
-                    alertas('CPF já cadastrado, digite um novo CPF', 'danger')
+                    alertas('CPF já cadastrado, digite um novo CPF!', 'danger')
                     document.getElementById('inputCpf').classList.add('invalid-form')
                     document.getElementById('inputCpf').classList.remove('valid-form')
                     document.getElementById('inputCpf').setCustomValidity('erro')
                 } else {
                     alertas('Cadastro realizado com sucesso', 'success')
+                    setTimeout(() => {
+                        limparInput('form-cadastro')
+                        limparValidate()
+                    }, 5000);
                 }
             } else {
                 if (data.error === 'CPF ja cadastrado') {
-                    alertas('CPF já cadastrado, digite um novo CPF', 'danger')
+                    alertas('CPF já cadastrado, digite um novo CPF!', 'danger')
                     document.getElementById('inputCpf').classList.add('invalid-form')
                     document.getElementById('inputCpf').classList.remove('valid-form')
                     document.getElementById('inputCpf').setCustomValidity('erro')
                 } else {
-                    alertas('Alteração no cadastro realizado com sucesso', 'success')
+                    alertas('Alteração no cadastro realizado com sucesso!', 'success')
                 }
             }
 

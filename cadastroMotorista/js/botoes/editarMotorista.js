@@ -5,8 +5,8 @@ function exibirEditar(element) {
 
     limparValidate()
 
-    document.getElementById("h3").textContent = "Alterar Cadastro Motorista";
-    document.getElementById("tabCadastro").textContent = "Alterar Cadastro";
+    document.getElementById("h3").textContent = "Alterar Cadastro Motorista"
+    document.getElementById("tabCadastro").textContent = "Alterar Cadastro"
 
     document.getElementById('inputNome').value = element.nome.trim()
     document.getElementById('inputCpf').value = element.cpf.trim()

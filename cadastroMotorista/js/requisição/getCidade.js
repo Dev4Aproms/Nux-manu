@@ -9,7 +9,6 @@ function getCidadesPorEstado(uf, tabName) {
         if (tabName === 'Cadastro') {
           const cidadeSelect = document.getElementById('inputCidade');
           cidadeSelect.innerHTML = '';
-
           if (document.getElementById('inputUf').value !== '') {
             data.forEach(cidade => {
               let option = document.createElement('option');
@@ -25,7 +24,7 @@ function getCidadesPorEstado(uf, tabName) {
 
 
         if (tabName === 'Consulta') {
-          const cidadeSelectConsulta = document.getElementById('inputCidadeConsulta');
+          const cidadeSelectConsulta = document.getElementById('inputCidadeConsulta')
           cidadeSelectConsulta.innerHTML = '';
           if (document.getElementById('inputUfConsulta').value !== '') {
             data.forEach(cidadeConsulta => {
